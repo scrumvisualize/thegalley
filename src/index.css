@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slideInLeft {
+  animation: slideInLeft 1.5s ease-out;
+}
+
+@keyframes photoPulse {
+  0% {
+    transform: scale(1);
+  }
+
+  25% {
+    transform: scale(1.03);
+  }
+
+  50% {
+    transform: scale(1.06);
+  }
+
+  75% {
+    transform: scale(1.03);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.photo-hover:hover img {
+  animation: photoPulse 1.6s ease-in-out infinite;
+}
