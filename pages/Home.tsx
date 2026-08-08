@@ -16,6 +16,7 @@ import { FaFacebookF, FaInstagram } from 'react-icons/fa';
 import { Coffee, Users } from 'lucide-react';
 import SpecialExperiences from '../components/SpecialExperiences';
 import MainSlider from '../components/MainSlider';
+import Footer from '../components/Footer';
 
 const galleryItems = [
   {
@@ -153,7 +154,7 @@ export default function Home() {
         <div
           className="
           fixed
-          bottom-5
+          bottom-54
           left-5
           z-50
           lg:hidden
@@ -164,6 +165,7 @@ export default function Home() {
             className="
             rounded-full
             bg-[#4D665C]
+            bottom-20
             px-5
             py-3
             text-sm
@@ -182,7 +184,7 @@ export default function Home() {
         <div
           className="
             absolute
-            bottom-44
+            bottom-84
             left-6
             z-20
             max-w-3xl
@@ -238,7 +240,7 @@ export default function Home() {
         <button
           className="
           absolute
-          bottom-4
+          bottom-54
           right-4
           z-20
           flex
@@ -253,12 +255,14 @@ export default function Home() {
           text-sm
           font-semibold
           text-white
-
           sm:bottom-8
           sm:right-8
-
           md:bottom-10
           md:right-10
+          hover:bg-[#C89B3C]
+          hover:scale-105
+          active:bg-[#C89B3C]
+          active:scale-95
          "
         >
           Book Now
@@ -951,19 +955,20 @@ export default function Home() {
 
             <div
               className="
-              hidden
               overflow-hidden
-              md:block
+              block
+              w-full
               md:w-1/2
               "
             >
               <img
                 src="/images/hero.png"
                 className="
-                  h-full
+                  h-auto
                   w-full
                   object-cover
                   animate-slideInLeft
+                  py-14
                   "
               />
             </div>
@@ -973,8 +978,12 @@ export default function Home() {
             <div
               className="
               w-full
-              p-10
+              px-5
+              py-5
+              sm:px-8
+              sm:py-8
               md:w-1/2
+              md:p-10
             "
             >
               <h2
@@ -1087,6 +1096,7 @@ export default function Home() {
           </div>
         </>
       )}
+      <Footer />
     </>
   );
 }

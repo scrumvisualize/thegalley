@@ -311,11 +311,13 @@ export default function MainSlider() {
               pointer-events-none
               absolute
               left-1/2
-              top-[10%]
+              top-[15%]
               z-20
               w-full
               -translate-x-1/2
               text-center
+
+              sm:top-[10%]
             "
           >
             <h1
@@ -345,29 +347,54 @@ export default function MainSlider() {
             className="
               pointer-events-none
               absolute
-              bottom-[13%]
-              left-1/2
+              bottom-[1%]
+              left-0
               z-30
-              -translate-x-1/2
-              whitespace-nowrap
+              w-full
+              text-center
             "
           >
             <h2
               className="
-                text-[3.5rem]
-                font-semibold
-                leading-none
-                tracking-[-0.06em]
-                text-[#f7d9b0]
-
-                sm:text-[5rem]
-                md:text-[6.5rem]
-                lg:text-[8rem]
-                xl:text-[10rem]
-              "
+              text-[3.5rem]
+              font-semibold
+              leading-none
+              tracking-[-0.06em]
+              text-[#f7d9b0]
+              sm:text-[5rem]
+              md:text-[6.5rem]
+              lg:text-[8rem]
+              xl:text-[10rem]
+            "
             >
               The Galley
             </h2>
+
+            <p
+              className="
+                mx-auto 
+                mt-1
+                w-[90vw] 
+                max-w-[900px] 
+                text-center 
+                text-[10px] 
+                font-medium 
+                leading-[1.6] 
+                tracking-[0.12em] 
+                text-[#FFE5C2] 
+                sm:mt-5 
+                md:mt-6 
+                md:text-sm
+              "
+            >
+              Fresh flavours and carefully crafted dishes bring people together
+              <br />
+              in a warm and welcoming atmosphere where every moment feels
+              <br />
+              special. Enjoy great food, wonderful company and memorable
+              <br />
+              moments with us
+            </p>
           </div>
 
           {/* =================================================
@@ -378,28 +405,29 @@ export default function MainSlider() {
             className="
               pointer-events-none
               absolute
-              right-[15px]
+              right-[5px]
               top-1/2
               z-40
-              w-[24vw]
+              w-[23vw]
               -translate-y-1/2
               px-2
               py-2
-
+              sm:right-[12px]
+              md:right-[25px]
               md:px-8
               md:py-2
             "
           >
             <p
               className="
-                text-right
-                text-[clamp(1.2rem,3vw,3.5rem)]
-                font-bold
-                uppercase
-                leading-[1.5]
-                tracking-[-0.04em]
-                text-[#FFE5C2]
-              "
+              text-right
+              text-[clamp(1.2rem,3vw,3.5rem)]
+              font-bold
+              uppercase
+              leading-[1.5]
+              tracking-[-0.04em]
+              text-[#FFE5C2]
+            "
             >
               GREAT
               <br />
@@ -437,13 +465,10 @@ export default function MainSlider() {
             bg-[#D90B18]
             px-3
             py-4
-
             sm:px-6
             sm:py-6
-
             md:px-8
             md:py-8
-
             lg:px-10
           "
         >
@@ -456,14 +481,11 @@ export default function MainSlider() {
               max-w-[1800px]
               grid-cols-2
               gap-3
-
               sm:gap-4
-
               md:grid-cols-4
               md:gap-4
-
               lg:gap-5
-            "
+              "
           >
             {/* =================================================
                 CARD 1
@@ -501,6 +523,7 @@ export default function MainSlider() {
                 className="
                   absolute
                   inset-0
+                  z-10
                   bg-black/20
                 "
               />
@@ -537,14 +560,18 @@ export default function MainSlider() {
 
                 <span
                   className="
-                    mt-2
-                    text-[9px]
-                    font-medium
-                    uppercase
-                    tracking-[0.25em]
-                    text-[#403d39]
-
-                    sm:text-sm
+                   mt-2
+                  rounded-full
+                  bg-[#FFE5C2]/80
+                  px-3
+                  py-1
+                  text-[9px]
+                  font-medium
+                  uppercase
+                  tracking-[0.25em]
+                  text-[#403d39]
+                  shadow-sm
+                  sm:text-sm
                   "
                 >
                   Cuisine
@@ -624,14 +651,17 @@ export default function MainSlider() {
 
                 <span
                   className="
-                    mt-2
-                    text-[9px]
-                    font-medium
-                    uppercase
-                    tracking-[0.25em]
-                    text-[#403d39]
-
-                    sm:text-sm
+                  rounded-full
+                  bg-[#FFE5C2]/80
+                  px-3
+                  py-1
+                  text-[9px]
+                  font-medium
+                  uppercase
+                  tracking-[0.25em]
+                  text-[#403d39]
+                  shadow-sm
+                  sm:text-sm
                   "
                 >
                   Handmade
@@ -711,14 +741,17 @@ export default function MainSlider() {
 
                 <span
                   className="
-                    mt-2
-                    text-[9px]
-                    font-medium
-                    uppercase
-                    tracking-[0.25em]
-                    text-[#403d39]
-
-                    sm:text-sm
+                  rounded-full
+                  bg-[#FFE5C2]/80
+                  px-3
+                  py-1
+                  text-[9px]
+                  font-medium
+                  uppercase
+                  tracking-[0.25em]
+                  text-[#403d39]
+                  shadow-sm
+                  sm:text-sm
                   "
                 >
                   Grilled
@@ -798,14 +831,17 @@ export default function MainSlider() {
 
                 <span
                   className="
-                    mt-2
-                    text-[9px]
-                    font-medium
-                    uppercase
-                    tracking-[0.25em]
-                    text-[#403d39]
-
-                    sm:text-sm
+                  rounded-full
+                  bg-[#FFE5C2]/80
+                  px-3
+                  py-1
+                  text-[9px]
+                  font-medium
+                  uppercase
+                  tracking-[0.25em]
+                  text-[#403d39]
+                  shadow-sm
+                  sm:text-sm
                   "
                 >
                   Sweet
@@ -847,7 +883,8 @@ export default function MainSlider() {
               pointer-events-none
               absolute
               left-1/2
-              top-[2%]
+              top-[9%]
+              sm:top-[2%]
               z-0
               -translate-x-1/2
               whitespace-nowrap
@@ -855,17 +892,14 @@ export default function MainSlider() {
           >
             <h2
               className="
+                whitespace-nowrap
                 font-serif
-                text-[20vw]
+                text-[clamp(3.2rem,12vw,11rem)]
                 font-medium
                 uppercase
                 leading-none
-                tracking-[-0.06em]
-                text-[#FFE5C2]/15
-
-                sm:text-[17vw]
-                md:text-[14vw]
-                lg:text-[11vw]
+                tracking-[-0.03em]
+                text-[#FFE5C2]/40
               "
             >
               Casual Dining
@@ -956,80 +990,76 @@ export default function MainSlider() {
                 bg-[#FFE5C2]
               "
               >
-                {/* ================= PLATE IMAGE ================= */}
+                {/* ================= PLATE DIV ================= */}
 
-                <img
-                  src="/images/dinnerplate.png"
-                  alt=""
+                <div
                   className="
-                  absolute
-                  inset-0
-                  z-0
-                  h-full
-                  w-full
-                  rounded-full
-                  object-cover
-                "
-                />
-
-                {/* ================= CURVED TEXT ================= */}
-
-                <svg
-                  viewBox="0 0 400 400"
-                  className="
-                  pointer-events-none
-                  absolute
-                  inset-0
-                  z-10
-                  h-full
-                  w-full
-                "
+                    relative
+                    h-full
+                    w-full
+                    overflow-hidden
+                    rounded-full
+                    bg-[#FFE5C2]
+                  "
                 >
-                  <defs>
-                    {/* Top curve */}
-                    <path
-                      id="topCurve"
-                      d="M 65,200 A 135,135 0 0,1 335,200"
-                      fill="none"
-                    />
+                  {/* ================= CURVED TEXT ================= */}
 
-                    {/* Bottom curve */}
-                    <path
-                      id="bottomCurve"
-                      d="M 70,215 A 130,130 0 0,0 330,215"
-                      fill="none"
-                    />
-                  </defs>
-
-                  {/* EXPLORE */}
-
-                  <text
-                    fill="#D90B18"
-                    fontSize="28"
-                    fontWeight="600"
-                    letterSpacing="4"
-                    textAnchor="middle"
+                  <svg
+                    viewBox="0 0 400 400"
+                    className="
+                      pointer-events-none
+                      absolute
+                      inset-0
+                      z-10
+                      h-full
+                      w-full
+                    "
                   >
-                    <textPath href="#topCurve" startOffset="50%">
-                      EXPLORE
-                    </textPath>
-                  </text>
+                    <defs>
+                      {/* Top curve */}
+                      <path
+                        id="topCurve"
+                        d="M 65,200 A 135,135 0 0,1 335,200"
+                        fill="none"
+                      />
 
-                  {/* FOOD VARIETIES */}
+                      {/* Bottom curve */}
+                      <path
+                        id="bottomCurve"
+                        d="M 70,215 A 130,130 0 0,0 330,215"
+                        fill="none"
+                      />
+                    </defs>
 
-                  <text
-                    fill="#D90B18"
-                    fontSize="18"
-                    fontWeight="500"
-                    letterSpacing="3"
-                    textAnchor="middle"
-                  >
-                    <textPath href="#bottomCurve" startOffset="50%">
-                      FOOD VARIETIES
-                    </textPath>
-                  </text>
-                </svg>
+                    {/* EXPLORE */}
 
+                    <text
+                      fill="#D90B18"
+                      fontSize="28"
+                      fontWeight="600"
+                      letterSpacing="4"
+                      textAnchor="middle"
+                    >
+                      <textPath href="#topCurve" startOffset="50%">
+                        EXPLORE
+                      </textPath>
+                    </text>
+
+                    {/* FOOD VARIETIES */}
+
+                    <text
+                      fill="#D90B18"
+                      fontSize="18"
+                      fontWeight="500"
+                      letterSpacing="3"
+                      textAnchor="middle"
+                    >
+                      <textPath href="#bottomCurve" startOffset="50%">
+                        FOOD VARIETIES
+                      </textPath>
+                    </text>
+                  </svg>
+                </div>
                 {/* ================= CENTER ARROW ================= */}
 
                 <div
