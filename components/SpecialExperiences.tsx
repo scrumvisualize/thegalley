@@ -5,7 +5,7 @@ export default function SpecialExperiences() {
   return (
     <section
       className="
-        bg-[#E8DCC8]
+        bg-[#f0e9dd]
         py-10
         transition-colors
         duration-500
@@ -32,14 +32,17 @@ export default function SpecialExperiences() {
           <h2
             className="
               mb-6
-              text-7xl
-              text-[#2D241E]
-              dark:text-[#F5F0E8]
               font-black
               uppercase
+              leading-none
+              tracking-tight
               text-[#2D241E]
               dark:text-white
-              "
+              text-5xl
+              sm:text-6xl
+              md:text-7xl
+              lg:text-8xl
+            "
           >
             Special Experiences
           </h2>
@@ -67,7 +70,7 @@ export default function SpecialExperiences() {
               hover:shadow-xl
               dark:border-[#2C2A29]
               dark:bg-[#1B1A19]
-            "
+              "
           >
             <div>
               <p
@@ -119,7 +122,7 @@ export default function SpecialExperiences() {
                 items-center
                 gap-3
                 rounded-full
-                bg-[#C8AE8D]
+                bg-[#495A4D]
                 px-10
                 py-4
                 text-sm
@@ -133,7 +136,7 @@ export default function SpecialExperiences() {
                 hover:bg-[#B1872F]
                 hover:shadow-xl
                 dark:shadow-black/40
-              "
+                "
             >
               Read More
               <ArrowRight size={18} />
@@ -151,10 +154,10 @@ export default function SpecialExperiences() {
               overflow-hidden
               rounded-xl
               shadow-sm
-            "
+              "
           >
             <img
-              src="src/assets/hero.png"
+              src="src/assets/lights.png"
               alt="Events"
               className="
                 h-[450px]
@@ -163,7 +166,7 @@ export default function SpecialExperiences() {
                 transition-transform
                 duration-700
                 group-hover:scale-105
-              "
+                "
             />
 
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
@@ -182,7 +185,17 @@ export default function SpecialExperiences() {
                 Birthday • Anniversary
               </p>
 
-              <h3 className="mb-6 text-5xl font-bold text-white">Events</h3>
+              <h3
+                className="mb-6
+                text-5xl
+                sm:text-6xl
+                md:text-7xl
+                lg:text-8xl
+                font-bold 
+                text-white"
+              >
+                Events
+              </h3>
 
               <span
                 className="
@@ -229,7 +242,7 @@ export default function SpecialExperiences() {
               hover:shadow-xl
               dark:border-[#2C2A29]
               dark:bg-[#1B1A19]
-            "
+              "
           >
             <p
               className="
@@ -240,7 +253,7 @@ export default function SpecialExperiences() {
                 tracking-[0.4em]
                 text-[#C89B3C]
                 dark:text-[#D8B56B]
-              "
+                "
             >
               Highlights
             </p>
@@ -384,7 +397,7 @@ export default function SpecialExperiences() {
                 hover:text-[#B08A5A]
                 dark:text-[#F5F0E8]
                 dark:hover:text-[#D8B56B]
-              "
+                "
             >
               Explore More
               <ArrowRight size={16} />
