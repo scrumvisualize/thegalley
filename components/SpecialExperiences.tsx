@@ -157,7 +157,7 @@ export default function SpecialExperiences() {
               "
           >
             <img
-              src="src/assets/lights.png"
+              src="/images/lights.png"
               alt="Events"
               className="
                 h-[450px]
