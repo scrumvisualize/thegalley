@@ -286,7 +286,7 @@ export default function MainSlider() {
               loop
               playsInline
             >
-              <source src="src/assets/galleysample.mp4" type="video/mp4" />
+              <source src="/images/galleysample.mp4" type="video/mp4" />
             </video>
 
             {/* 15% DARK VIDEO OVERLAY */}
@@ -483,7 +483,7 @@ export default function MainSlider() {
               "
             >
               <img
-                src="src/assets/poke.png"
+                src="/images/poke.png"
                 alt="French cuisine"
                 className="
                   absolute
@@ -570,7 +570,7 @@ export default function MainSlider() {
               "
             >
               <img
-                src="src/assets/slide2.png"
+                src="/images/slide2.png"
                 alt="Handmade pasta"
                 className="
                   absolute
@@ -657,7 +657,7 @@ export default function MainSlider() {
               "
             >
               <img
-                src="src/assets/poke.png"
+                src="/images/poke.png"
                 alt="Grilled steak"
                 className="
                   absolute
@@ -744,7 +744,7 @@ export default function MainSlider() {
               "
             >
               <img
-                src="src/assets/slide2.png"
+                src="/images/slide2.png"
                 alt="Dessert"
                 className="
                   absolute
@@ -959,7 +959,7 @@ export default function MainSlider() {
                 {/* ================= PLATE IMAGE ================= */}
 
                 <img
-                  src="src/assets/dinnerplate.png"
+                  src="/images/dinnerplate.png"
                   alt=""
                   className="
                   absolute

@@ -19,32 +19,32 @@ import MainSlider from '../components/MainSlider';
 
 const galleryItems = [
   {
-    image: 'src/assets/cafe.png',
+    image: '/images/cafe.png',
     title: 'Cappuccino',
     subtitle: 'Small / Medium / Large'
   },
   {
-    image: 'src/assets/cafe.png',
+    image: '/images/cafe.png',
     title: 'Latte',
     subtitle: 'Smooth & Creamy'
   },
   {
-    image: 'src/assets/cafe.png',
+    image: '/images/cafe.png',
     title: 'Espresso',
     subtitle: 'Single / Double Shot'
   },
   {
-    image: 'src/assets/cafe.png',
+    image: '/images/cafe.png',
     title: 'Mocha',
     subtitle: 'Rich Chocolate Blend'
   },
   {
-    image: 'src/assets/cafe.png',
+    image: '/images/cafe.png',
     title: 'Flat White',
     subtitle: 'Signature Coffee'
   },
   {
-    image: 'src/assets/cafe.png',
+    image: '/images/cafe.png',
     title: 'Chaya',
     subtitle: 'Kerala Chaya'
   }
@@ -86,7 +86,7 @@ export default function Home() {
           playsInline
           className="absolute inset-0 h-full w-full object-cover"
         >
-          <source src="src/assets/galleysample.mp4" type="video/mp4" />
+          <source src="/images/galleysample.mp4" type="video/mp4" />
         </video>
 
         {/* Dark Overlay */}
@@ -958,7 +958,7 @@ export default function Home() {
               "
             >
               <img
-                src="src/assets/hero.png"
+                src="/images/hero.png"
                 className="
                   h-full
                   w-full
