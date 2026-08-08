@@ -13,7 +13,7 @@ import {
   X
 } from 'lucide-react';
 import { FaFacebookF, FaInstagram } from 'react-icons/fa';
-import { Coffee, UtensilsCrossed, Users } from 'lucide-react';
+import { Coffee, Users } from 'lucide-react';
 import SpecialExperiences from '../components/SpecialExperiences';
 import MainSlider from '../components/MainSlider';
 
