@@ -8,11 +8,14 @@ import {
   ChevronRight,
   Clock3,
   MapPin,
-  Phone
+  Phone,
+  Menu,
+  X
 } from 'lucide-react';
 import { FaFacebookF, FaInstagram } from 'react-icons/fa';
 import { Coffee, UtensilsCrossed, Users } from 'lucide-react';
 import SpecialExperiences from '../components/SpecialExperiences';
+import MainSlider from '../components/MainSlider';
 
 const galleryItems = [
   {
@@ -50,6 +53,7 @@ const galleryItems = [
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
   const [showOffer, setShowOffer] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const photoRef = useRef<HTMLDivElement>(null);
 
@@ -62,6 +66,15 @@ export default function Home() {
       localStorage.setItem('theme', 'light');
     }
   }, [darkMode]);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowOffer(true);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <>
       <section className="sticky top-0 h-screen overflow-hidden">
@@ -73,19 +86,8 @@ export default function Home() {
           playsInline
           className="absolute inset-0 h-full w-full object-cover"
         >
-          <source src="src/assets/sample.mp4" type="video/mp4" />
+          <source src="src/assets/galleysample.mp4" type="video/mp4" />
         </video>
-        {/* Theme Overlay */}
-        {/* <div
-          className="
-          absolute
-          inset-0
-          bg-black/10
-          dark:bg-black/30
-          transition-all
-          duration-700
-        "
-        ></div> */}
 
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-transparent" />
@@ -103,26 +105,23 @@ export default function Home() {
           items-center
           rounded-full
           px-4
-          py-8
+          py-6
           text-white
           backdrop-blur-md
-        "
+          "
           style={{
             backgroundColor: 'rgba(77, 102, 92, 0.8)'
           }}
         >
           <FaInstagram
             className="mb-5 cursor-pointer text-white transition hover:text-amber-400"
-            size={22}
+            size={18}
           />
-
           <FaFacebookF
             className="cursor-pointer text-white transition hover:text-amber-400"
-            size={20}
+            size={16}
           />
-
-          <div className="my-6 h-20 w-px bg-white/40" />
-
+          <div className="my-4 h-10 w-px bg-white/40" />
           <span
             onClick={() => setShowOffer(true)}
             style={{ writingMode: 'vertical-rl' }}
@@ -133,7 +132,7 @@ export default function Home() {
             border
             border-white/30
             px-2
-            py-4
+            py-2
             text-xs
             font-semibold
             tracking-[0.5em]
@@ -145,68 +144,81 @@ export default function Home() {
             hover:border-[#D4AF37]
             hover:text-[#D4AF37]
             hover:shadow-[0_0_12px_rgba(212,175,55,0.35)]
-                    "
+            "
           >
             GET 10% OFF
           </span>
         </div>
 
-        {/* Hero */}
-        <div className="absolute left-6 top-1/2 z-20 max-w-3xl -translate-y-1/2 md:left-20">
-          <div className="mb-74 h-22 w-1 bg-amber-400"></div>
-
-          {/* <h1
+        <div
+          className="
+          fixed
+          bottom-5
+          left-5
+          z-50
+          lg:hidden
+          "
+        >
+          <button
+            onClick={() => setShowOffer(true)}
             className="
-            text-5xl
-            font-black
-            uppercase
-            leading-[1.15]
-            tracking-wide
+            rounded-full
+            bg-[#4D665C]
+            px-5
+            py-3
+            text-sm
+            font-semibold
             text-white
-            md:text-6xl
-            lg:text-7xl
-            xl:text-8xl
-            mx-10
-            "
+            shadow-xl
+            transition
+            hover:bg-[#C89B3C]
+          "
           >
-            WELCOME
-            <br />
-            TO THE
-            <br />
-            GALLEY
-            <br />
-            CAFE
-          </h1> */}
+            🎉 GET 10% OFF
+          </button>
+        </div>
+
+        {/* Hero */}
+        <div
+          className="
+            absolute
+            bottom-44
+            left-6
+            z-20
+            max-w-3xl
+            sm:left-10
+            md:bottom-40
+            md:left-16
+            lg:left-20
+            "
+        >
           <h1
             className="
-            mx-12
             text-white
-          "
+            "
           >
             <span
               className="
                 block
-                font-['Great_Vibes']
-                text-5xl
-                italic font-bold
-                normal-case
-                md:text-7xl
-                lg:text-8xl
-              "
+                text-4xl
+                font-bold
+                sm:text-5xl
+                md:text-6xl
+                "
             >
               Welcome to
             </span>
 
             <span
               className="
-              block
-              text-5xl
-              font-black
-              uppercase
-              tracking-wide
-              md:text-6xl
-              lg:text-6xl
-            "
+               block
+               text-5xl
+               font-black
+               uppercase
+               tracking-wide
+               sm:text-6xl
+               md:text-7xl
+               "
             >
               THE GALLEY
             </span>
@@ -226,29 +238,28 @@ export default function Home() {
         <button
           className="
           absolute
-          bottom-10
-          right-6
+          bottom-4
+          right-4
           z-20
           flex
           items-center
-          gap-3
+          gap-2
           rounded-full
           border
           border-white/30
           bg-[#4D665C]
-          px-7
-          py-4
-          my-12
-          md:my-10
+          px-5
+          py-3
+          text-sm
+          font-semibold
           text-white
-          backdrop-blur-md
-          transition-all
-          duration-300
-          hover:bg-amber-400
-          hover:text-black
-          hover:shadow-xl
+
+          sm:bottom-8
+          sm:right-8
+
+          md:bottom-10
           md:right-10
-        "
+         "
         >
           Book Now
           <ArrowRight size={20} />
@@ -256,25 +267,25 @@ export default function Home() {
         <button
           onClick={() => setDarkMode(!darkMode)}
           className="
-        absolute
-        top-6
-        right-6
-        z-30
-        flex
-        h-12
-        w-12
-        items-center
-        justify-center
-        rounded-full
-        border
-        border-white/30
-        bg-white/20
-        text-white
-        backdrop-blur-md
-        transition
-        hover:bg-white
-        hover:text-black
-      "
+          absolute
+          top-6
+          right-6
+          z-30
+          flex
+          h-12
+          w-12
+          items-center
+          justify-center
+          rounded-full
+          border
+          border-white/30
+          bg-white/20
+          text-white
+          backdrop-blur-md
+          transition
+          hover:bg-white
+          hover:text-black
+          "
         >
           {darkMode ? <Sun size={22} /> : <Moon size={22} />}
         </button>
@@ -286,28 +297,29 @@ export default function Home() {
         z-30
         mt-2
         rounded-t-[40px]
-        bg-[#F7F1E8]
+        bg-[#2F3F39]
         border-b
-        border-[#E8DCC8]
+        border-[#46564F]
         px-0
         py-8
         dark:bg-[#121111]
         transition-colors
         duration-500
         min-h-screen
-      "
+        overflow-x-hidden
+        "
       >
         {/* Navigation */}
         <div
           className="
           mx-auto
-    flex
-    max-w-7xl
-    items-center
-    justify-between
-    gap-6
-    px-6
-    lg:px-8
+          flex
+          max-w-7xl
+          items-center
+          justify-between
+          gap-6
+          px-6
+          lg:px-8
           "
         >
           {/* Logo */}
@@ -317,7 +329,7 @@ export default function Home() {
             alt="The Galley Cafe"
           />
 
-          {/* Menu */}
+          {/* Desktop Menu */}
           <nav
             className="
             hidden
@@ -327,7 +339,7 @@ export default function Home() {
             lg:gap-6
             text-sm
             font-medium
-            text-gray-700
+            text-[#F8F4EE]
             dark:text-white
             md:text-base
             [font-family:'Montserrat',sans-serif]
@@ -341,8 +353,8 @@ export default function Home() {
               py-2
               transition-all
               duration-300
-              hover:bg-white
-              hover:text-black
+              hover:bg-[#C89B3C]
+              hover:text-[#1c1611]
               hover:shadow-lg
               dark:hover:bg-[#C89B3C]
               dark:hover:text-white
@@ -358,8 +370,8 @@ export default function Home() {
               py-2
               transition-all
               duration-300
-              hover:bg-white
-              hover:text-black
+              hover:bg-[#C89B3C]
+              hover:text-[#1c1611]
               hover:shadow-lg
               dark:hover:bg-[#C89B3C]
               dark:hover:text-white
@@ -375,8 +387,8 @@ export default function Home() {
               py-2
               transition-all
               duration-300
-              hover:bg-white
-              hover:text-black
+              hover:bg-[#C89B3C]
+              hover:text-[#1c1611]
               hover:shadow-lg
               dark:hover:bg-[#C89B3C]
               dark:hover:text-white
@@ -393,8 +405,8 @@ export default function Home() {
               py-2
               transition-all
               duration-300
-              hover:bg-white
-              hover:text-black
+              hover:bg-[#C89B3C]
+              hover:text-[#1c1611]
               hover:shadow-lg
               dark:hover:bg-[#C89B3C]
               dark:hover:text-white
@@ -411,8 +423,8 @@ export default function Home() {
               py-2
               transition-all
               duration-300
-              hover:bg-white
-              hover:text-black
+              hover:bg-[#C89B3C]
+              hover:text-[#1c1611]
               hover:shadow-lg
               dark:hover:bg-[#C89B3C]
               dark:hover:text-white
@@ -428,8 +440,8 @@ export default function Home() {
               py-2
               transition-all
               duration-300
-              hover:bg-white
-              hover:text-black
+              hover:bg-[#C89B3C]
+              hover:text-[#1c1611]
               hover:shadow-lg
               dark:hover:bg-[#C89B3C]
               dark:hover:text-white
@@ -445,16 +457,33 @@ export default function Home() {
               py-2
               transition-all
               duration-300
-              hover:bg-white
-              hover:text-black
+              hover:bg-[#C89B3C]
+              hover:text-[#1c1611]
               hover:shadow-lg
               dark:hover:bg-[#C89B3C]
               dark:hover:text-white
-            "
+              "
             >
               CONTACT
             </a>
           </nav>
+
+          {/* Mobile Button */}
+          <button
+            onClick={() => setMobileMenuOpen(true)}
+            className="
+              md:hidden
+              rounded-full
+              bg-white/10
+              p-3
+              text-white
+              backdrop-blur-md
+              transition
+              hover:bg-white/20
+            "
+          >
+            <Menu size={28} />
+          </button>
         </div>
 
         {/* Buttons Section */}
@@ -462,9 +491,9 @@ export default function Home() {
           className="
             w-full
             mt-8
-            bg-[#E8DCC8]
+            bg-[#f0e9dd]
             px-0
-            py-16
+            py-10
             dark:bg-[#000000]
             "
         >
@@ -483,7 +512,7 @@ export default function Home() {
               className="
               min-w-[260px]
               rounded-full
-              bg-[#c8ae8d]
+              bg-[#495A4D]
               px-12
               py-5
               text-xl
@@ -491,7 +520,7 @@ export default function Home() {
               text-white
               shadow-lg
               transition
-              hover:bg-[#B1872F]
+              hover:bg-[#36453B]
               dark:shadow-black/40
             "
             >
@@ -502,7 +531,7 @@ export default function Home() {
               className="
               min-w-[260px]
               rounded-full
-              bg-[#c8ae8d]
+              bg-[#495A4D]
               px-12
               py-5
               text-xl
@@ -510,7 +539,7 @@ export default function Home() {
               text-white
               shadow-lg
               transition
-              hover:bg-[#B1872F]
+              hover:bg-[#36453B]
               dark:shadow-black/40
             "
             >
@@ -520,27 +549,27 @@ export default function Home() {
 
           <div className="mt-10 flex flex-wrap items-center justify-center gap-8 text-sm text-[#6B645D] dark:text-[#C8C2BA]">
             <div className="flex items-center gap-2">
-              <Clock3 className="h-4 w-4 text-[#C89B3C]" />
+              <Clock3 className="h-4 w-4 text-[#36453B]" />
               <span>Open 7 Days</span>
             </div>
 
             <div className="flex items-center gap-2">
-              <MapPin className="h-4 w-4 text-[#C89B3C]" />
+              <MapPin className="h-4 w-4 text-[#36453B]" />
               <span>Coomera, QLD, 4209</span>
             </div>
 
             <div className="flex items-center gap-2">
-              <Phone className="h-4 w-4 text-[#C89B3C]" />
+              <Phone className="h-4 w-4 text-[#36453B]" />
               <span>(07) 5502 6435</span>
             </div>
           </div>
 
-          <div className="mt-10 flex items-center justify-center">
-            <div className="h-px w-24 bg-[#C8AE8D]/40"></div>
+          <div className="mt-8 flex items-center justify-center">
+            <div className="h-px w-32 bg-[#495A4D]/70"></div>
 
             <Coffee className="mx-5 h-5 w-5 text-[#C89B3C]" />
 
-            <div className="h-px w-24 bg-[#C8AE8D]/40"></div>
+            <div className="h-px w-32 bg-[#495A4D]/70"></div>
           </div>
 
           {/* Photos */}
@@ -572,7 +601,7 @@ export default function Home() {
               {/* Main Heading */}
               <h2
                 className="
-                mb-6
+                mb-4
                 text-left
                 text-7xl
                 font-black
@@ -581,7 +610,7 @@ export default function Home() {
                 dark:text-white
               "
               >
-                PHOTOS
+                OUR PHOTOS
               </h2>
 
               {/* Description */}
@@ -608,29 +637,42 @@ export default function Home() {
                 {/* View Photos Button */}
                 <button
                   className="
+                  mx-auto
                   flex
-                  w-fit
+                  w-full
+                  max-w-[280px]
                   items-center
-                  gap-3
+                  justify-center
+                  gap-2
                   rounded-full
-                  bg-[#c8ae8d]
-                  px-8
-                  py-6
-                  text-sm
+                  bg-[#495A4D]
+                  px-5
+                  py-4
+                  text-xs
                   font-bold
                   uppercase
-                  tracking-wider
+                  tracking-[0.15em]
                   text-white
                   shadow-lg
                   transition-all
                   duration-300
-                  hover:bg-[#B1872F]
+                  hover:bg-[#36453B]
                   hover:shadow-xl
+                  my-2
+                  sm:w-fit
+                  sm:max-w-none
+                  sm:px-6
+                  sm:py-4
+                  sm:text-sm
+
+                  lg:px-8
+                  lg:py-6
+                  lg:tracking-wider
                   lg:mr-12
                   "
                 >
                   VIEW ALL PHOTOS
-                  <ArrowRight size={20} />
+                  <ArrowRight size={18} className="sm:h-5 sm:w-5" />
                 </button>
               </div>
             </div>
@@ -673,7 +715,7 @@ export default function Home() {
                 scroll-smooth
                 snap-x
                 snap-mandatory
-                
+
                 "
               >
                 {galleryItems.map((item, index) => (
@@ -683,11 +725,14 @@ export default function Home() {
                     photo-hover
                     relative
                     shrink-0
-                    w-[320px]
+                    w-full
+                    sm:w-[340px]
+                    lg:w-[320px]
                     overflow-hidden
                     rounded-2xl
                     shadow-xl
                     cursor-pointer
+                    snap-center
                     "
                   >
                     <img
@@ -783,7 +828,7 @@ export default function Home() {
           <div
             className="
               w-full
-              
+
               bg-[#121111]
               px-0
               py-3
@@ -810,7 +855,7 @@ export default function Home() {
                   className="
                     text-2xl
                     font-black
-                    
+
                     uppercase
                     tracking-wider
                     text-transparent
@@ -828,7 +873,7 @@ export default function Home() {
                   absolute
                   text-2xl
                   font-black
-                  
+
                   uppercase
                   tracking-wider
                   text-black
@@ -842,7 +887,6 @@ export default function Home() {
               {/* Column 3 */}
               <div className="flex items-center justify-center gap-2">
                 <Users size={14} className="text-[#C8AE8D]" />
-
                 <p className="text-xs font-bold uppercase tracking-wide text-[#C8AE8D]">
                   More Merrier
                 </p>
@@ -850,6 +894,7 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <MainSlider />
         <SpecialExperiences />
       </section>
 
@@ -915,11 +960,11 @@ export default function Home() {
               <img
                 src="src/assets/hero.png"
                 className="
-              h-full
-              w-full
-              object-cover
-              animate-slideInLeft
-              "
+                  h-full
+                  w-full
+                  object-cover
+                  animate-slideInLeft
+                  "
               />
             </div>
 
@@ -982,20 +1027,65 @@ export default function Home() {
 
               <button
                 className="
-              mt-4
-              rounded-full
-              bg-[#C89B3C]
-              px-10
-              py-4
-              font-bold
-              text-white
-              "
+                mt-4
+                rounded-full
+                bg-[#C89B3C]
+                px-10
+                py-4
+                font-bold
+                text-white
+                "
               >
                 SEND
               </button>
             </div>
           </div>
         </div>
+      )}
+
+      {mobileMenuOpen && (
+        <>
+          {/* Backdrop */}
+          <div
+            className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm"
+            onClick={() => setMobileMenuOpen(false)}
+          />
+
+          {/* Drawer */}
+          <div
+            className="
+            fixed
+            right-0
+            top-0
+            z-50
+            h-screen
+            w-72
+            bg-[#24342D]/95
+            backdrop-blur-xl
+            shadow-2xl
+            p-8
+          "
+          >
+            <div className="mb-12 flex justify-end">
+              <button
+                onClick={() => setMobileMenuOpen(false)}
+                className="rounded-full p-2 text-white hover:bg-white/10"
+              >
+                <X size={28} />
+              </button>
+            </div>
+
+            <nav className="flex flex-col gap-6 text-lg font-semibold text-white">
+              <a href="/">HOME</a>
+              <a href="/booking">BOOK NOW</a>
+              <a href="/order">ORDER ONLINE</a>
+              <a href="/team">JOIN THE TEAM</a>
+              <a href="/menu">MENU</a>
+              <a href="/about">ABOUT US</a>
+              <a href="/contact">CONTACT</a>
+            </nav>
+          </div>
+        </>
       )}
     </>
   );
