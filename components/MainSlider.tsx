@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
 const TOTAL_SLIDES = 3;
-const AUTO_SLIDE_TIME = 3000;
+const AUTO_SLIDE_TIME = 5000;
 
 export default function MainSlider() {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -11,10 +11,25 @@ export default function MainSlider() {
   const touchStartX = useRef(0);
 
   const [activeSlide, setActiveSlide] = useState(0);
+  const [animateSlide1, setAnimateSlide1] = useState(false);
 
   /* =========================================================
      GO TO SLIDE
   ========================================================= */
+
+  useEffect(() => {
+    if (activeSlide === 0) {
+      setAnimateSlide1(false);
+
+      const timer = window.setTimeout(() => {
+        setAnimateSlide1(true);
+      }, 150);
+
+      return () => window.clearTimeout(timer);
+    } else {
+      setAnimateSlide1(false);
+    }
+  }, [activeSlide]);
 
   const goToSlide = (index: number) => {
     let nextIndex = index;
@@ -34,6 +49,18 @@ export default function MainSlider() {
 
     setActiveSlide(nextIndex);
 
+    /* =========================================
+   SLIDE 1 TEXT ANIMATION
+========================================= */
+
+    setAnimateSlide1(false);
+
+    if (nextIndex === 0) {
+      window.setTimeout(() => {
+        setAnimateSlide1(true);
+      }, 400);
+    }
+
     const slideWidth = window.innerWidth;
     const translateX = nextIndex * slideWidth;
 
@@ -41,7 +68,7 @@ export default function MainSlider() {
       trackRef.current.style.transform = `translate3d(-${translateX}px, 0, 0)`;
 
       trackRef.current.style.transition =
-        'transform 700ms cubic-bezier(0.22, 1, 0.36, 1)';
+        'transform 1500ms cubic-bezier(0.22, 1, 0.36, 1)';
     }
   };
 
@@ -268,7 +295,6 @@ export default function MainSlider() {
               -translate-y-1/2
               overflow-hidden
               rounded-2xl
-
               md:w-[62vw]
               lg:w-[56vw]
             "
@@ -293,84 +319,67 @@ export default function MainSlider() {
 
             <div
               className="
-                pointer-events-none
-                absolute
-                inset-0
-                z-10
-                bg-black/15
+              pointer-events-none
+              absolute
+              inset-0
+              z-10
+              rounded-2xl
+              bg-black/15
               "
             />
-          </div>
 
-          {/* =================================================
-              TOP TEXT
-          ================================================= */}
-
-          <div
-            className="
+            {/* CENTER HERO TEXT */}
+            <h1
+              className={`
               pointer-events-none
               absolute
               left-1/2
-              top-[15%]
-              z-20
-              w-full
+              top-1/2
+              z-30
+              w-[90%]
               -translate-x-1/2
+              -translate-y-1/2
               text-center
+              font-semibold
+              uppercase
+              leading-[0.9]
+              tracking-[-0.05em]
+              text-[#f7d9b0]
+              text-[2rem]
+              sm:text-[2.5rem]
+              md:text-[2rem]
+              lg:text-[4rem]
+              xl:text-[5rem]
+              transition-all
+              duration-[1300ms]
+              ease-[cubic-bezier(0.16,1,0.3,1)]
 
-              sm:top-[10%]
-            "
-          >
-            <h1
-              className="
-                whitespace-nowrap
-                text-[3.5rem]
-                font-semibold
-                leading-none
-                tracking-[-0.06em]
-                text-[#f7d9b0]
-
-                sm:text-[5rem]
-                md:text-[6.5rem]
-                lg:text-[8rem]
-                xl:text-[10rem]
-              "
+              ${
+                animateSlide1
+                  ? 'scale-100 opacity-100'
+                  : 'translate-y-[80px] scale-[1.25] opacity-0'
+              }
+            `}
             >
-              A Taste Of
+              A Taste of The Galley
             </h1>
           </div>
 
           {/* =================================================
               BOTTOM TEXT
           ================================================= */}
-
           <div
             className="
               pointer-events-none
               absolute
-              bottom-[18%]
+              top-[67%]
               left-0
               z-30
               w-full
               text-center
-              sm:bottom-[1%]
-            "
+              sm:bottom-[5%]
+              "
           >
-            <h2
-              className="
-              text-[3.5rem]
-              font-semibold
-              leading-none
-              tracking-[-0.06em]
-              text-[#f7d9b0]
-              sm:text-[5rem]
-              md:text-[6.5rem]
-              lg:text-[8rem]
-              xl:text-[10rem]
-            "
-            >
-              The Galley
-            </h2>
-
             <p
               className="
                 mx-auto 
@@ -400,52 +409,70 @@ export default function MainSlider() {
           {/* =================================================
               RIGHT SIDE TEXT
           ================================================= */}
-
           <div
             className="
-              pointer-events-none
-              absolute
-              right-[5px]
-              top-1/2
-              z-40
-              w-[23vw]
-              -translate-y-1/2
-              px-2
-              py-2
-              sm:right-[12px]
-              md:right-[25px]
-              md:px-8
-              md:py-2
+            pointer-events-none
+            absolute
+            z-40
+
+            /* MOBILE — directly below A Taste Of */
+            left-1/2
+            top-[25%]
+            w-full
+            -translate-x-1/2
+            text-center
+
+            /* DESKTOP — keep original right-side position */
+            md:left-auto
+            md:right-[25px]
+            md:top-1/2
+            md:w-[23vw]
+            md:translate-x-0
+            md:-translate-y-1/2
+            md:px-8
             "
           >
             <p
               className="
-              text-right
-              text-[clamp(1.2rem,3vw,3.5rem)]
-              font-bold
-              uppercase
-              leading-[1.5]
-              tracking-[-0.04em]
-              text-[#FFE5C2]
-            "
+                font-semibold
+                leading-[1.05]
+                tracking-[-0.03em]
+                text-[#FFE5C2]
+
+                /* MOBILE */
+                text-[1.2rem]
+                text-center
+
+                /* DESKTOP */
+                md:text-right
+                md:text-[clamp(1.2rem,3vw,3.5rem)]
+                md:leading-[1.5]
+                md:tracking-[-0.04em]
+                "
             >
-              GREAT
-              <br />
-              CAFE IN
-              <br />
-              COOMERA
-              <br />
-              FANTASTIC
-              <br />
-              VIBE &amp;
-              <br />
-              VIEW, A GREAT
-              <br />
-              SPOT
-              <br />
-              FOR EVERY
-              <br />
-              FAMILY EVENT
+              Great cafe in Coomera
+              {/* MOBILE ONLY */}
+              <span className="md:hidden">
+                <br />
+                <span className="text-[0.65rem] tracking-[0.08em]">
+                  FANTASTIC VIBE &amp; VIEW
+                </span>
+              </span>
+              {/* DESKTOP ONLY */}
+              <span className="hidden md:inline">
+                <br />
+                FANTASTIC
+                <br />
+                VIBE &amp;
+                <br />
+                VIEW, A GREAT
+                <br />
+                SPOT
+                <br />
+                FOR EVERY
+                <br />
+                FAMILY EVENT
+              </span>
             </p>
           </div>
         </div>

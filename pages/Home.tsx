@@ -154,7 +154,7 @@ export default function Home() {
         <div
           className="
           absolute
-          bottom-50
+          bottom-75
           left-5
           z-50
           lg:hidden
@@ -184,7 +184,7 @@ export default function Home() {
         <div
           className="
             absolute
-            bottom-84
+            bottom-110
             left-6
             z-20
             max-w-3xl
@@ -228,19 +228,55 @@ export default function Home() {
         </div>
 
         {/* Scroll Down */}
-        <button className="absolute bottom-14 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center text-white transition hover:text-amber-400">
-          <span className="mt-2 text-xs uppercase tracking-[0.4em]">
+
+        <button
+          className="
+          absolute
+          bottom-40
+          md:bottom-24
+          lg:bottom-16
+          left-1/2
+          z-20
+          flex
+          -translate-x-1/2
+          flex-col
+          items-center
+          text-[#e37632]
+          transition
+          duration-300
+        "
+        >
+          <span
+            className="
+            text-[17px]
+            font-medium
+            uppercase
+            tracking-[0.45em]
+            drop-shadow-[0_2px_4px_rgba(255,255,255,0.9)]
+          "
+          >
             Scroll Down
           </span>
-          <ChevronDown className="animate-bounce" size={34} />
-          <ChevronDown className="animate-bounce" size={34} />
+
+          <div className="mt-1 flex flex-col items-center">
+            <ChevronDown
+              size={30}
+              strokeWidth={2.2}
+              className="-mb-3 animate-bounce"
+            />
+            <ChevronDown
+              size={30}
+              strokeWidth={2.2}
+              className="animate-bounce"
+            />
+          </div>
         </button>
 
         {/* Book Button */}
         <button
           className="
           absolute
-          bottom-50
+          bottom-75
           right-4
           z-20
           flex
@@ -414,7 +450,7 @@ export default function Home() {
               hover:shadow-lg
               dark:hover:bg-[#C89B3C]
               dark:hover:text-white
-            "
+              "
             >
               JOIN THE TEAM
             </a>
@@ -432,7 +468,7 @@ export default function Home() {
               hover:shadow-lg
               dark:hover:bg-[#C89B3C]
               dark:hover:text-white
-            "
+              "
             >
               MENU
             </a>
@@ -449,7 +485,7 @@ export default function Home() {
               hover:shadow-lg
               dark:hover:bg-[#C89B3C]
               dark:hover:text-white
-            "
+              "
             >
               ABOUT US
             </a>
@@ -484,7 +520,7 @@ export default function Home() {
               backdrop-blur-md
               transition
               hover:bg-white/20
-            "
+              "
           >
             <Menu size={28} />
           </button>
@@ -570,9 +606,7 @@ export default function Home() {
 
           <div className="mt-8 flex items-center justify-center">
             <div className="h-px w-32 bg-[#495A4D]/70"></div>
-
             <Coffee className="mx-5 h-5 w-5 text-[#C89B3C]" />
-
             <div className="h-px w-32 bg-[#495A4D]/70"></div>
           </div>
 
@@ -668,7 +702,6 @@ export default function Home() {
                   sm:px-6
                   sm:py-4
                   sm:text-sm
-
                   lg:px-8
                   lg:py-6
                   lg:tracking-wider
@@ -702,7 +735,7 @@ export default function Home() {
                 text-white
                 backdrop-blur-md
                 hover:bg-[#C89B3C]
-              "
+                "
               >
                 <ChevronLeft size={28} />
               </button>
@@ -719,7 +752,6 @@ export default function Home() {
                 scroll-smooth
                 snap-x
                 snap-mandatory
-
                 "
               >
                 {galleryItems.map((item, index) => (
@@ -937,8 +969,8 @@ export default function Home() {
               top-4
               z-20
               flex
-              h-10
-              w-10
+              h-8
+              w-8
               items-center
               justify-center
               rounded-full
@@ -984,11 +1016,12 @@ export default function Home() {
               sm:py-8
               md:w-1/2
               md:p-10
+              mt-8
             "
             >
               <h2
                 className="
-                text-4xl
+                text-3xl
                 font-black
                 uppercase
                 text-[#2D241E]
@@ -1006,7 +1039,7 @@ export default function Home() {
                 dark:text-gray-300
                 "
               >
-                Subscribe now and receive 10% discount on your next visit to The
+                Subscribe and receive 10% discount on your next visit to The
                 Galley Cafe.
               </p>
 
