@@ -153,8 +153,8 @@ export default function Home() {
 
         <div
           className="
-          fixed
-          bottom-54
+          absolute
+          bottom-50
           left-5
           z-50
           lg:hidden
@@ -240,7 +240,7 @@ export default function Home() {
         <button
           className="
           absolute
-          bottom-54
+          bottom-50
           right-4
           z-20
           flex
@@ -933,7 +933,7 @@ export default function Home() {
               onClick={() => setShowOffer(false)}
               className="
               absolute
-              right-4
+              right-2
               top-4
               z-20
               flex
@@ -978,7 +978,7 @@ export default function Home() {
             <div
               className="
               w-full
-              px-5
+              px-1
               py-5
               sm:px-8
               sm:py-8

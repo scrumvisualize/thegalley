@@ -347,11 +347,12 @@ export default function MainSlider() {
             className="
               pointer-events-none
               absolute
-              bottom-[1%]
+              bottom-[18%]
               left-0
               z-30
               w-full
               text-center
+              sm:bottom-[1%]
             "
           >
             <h2
@@ -393,7 +394,6 @@ export default function MainSlider() {
               <br />
               special. Enjoy great food, wonderful company and memorable
               <br />
-              moments with us
             </p>
           </div>
 
@@ -1109,15 +1109,15 @@ export default function MainSlider() {
 
             <p
               className="
-                -mt-1
+                mt-4
                 max-w-[580px]
                 px-5
                 [font-family:'Montserrat',sans-serif]
                 text-sm
                 leading-relaxed
                 text-[#FFE5C2]/90
-
-                sm:mt-0
+                mt-[7px]
+                sm:mt-[7px]
                 sm:text-base
 
                 md:text-lg
