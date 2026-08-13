@@ -244,8 +244,9 @@ export default function MainSlider() {
         h-screen
         w-full
         overflow-hidden
-        bg-[#D90B18]
+        bg-[#F7E9D8]   
       "
+      //#D90B18
     >
       {/* =====================================================
           HORIZONTAL TRACK
@@ -276,7 +277,8 @@ export default function MainSlider() {
             w-screen
             shrink-0
             overflow-hidden
-            bg-[#D90B18]
+            bg-[#f0e9dd]
+            dark:bg-[#000000] /* Dark theme */
           "
         >
           {/* =================================================
@@ -391,17 +393,18 @@ export default function MainSlider() {
                 font-medium 
                 leading-[1.6] 
                 tracking-[0.12em] 
-                text-[#FFE5C2] 
+                dark:text-[#FFE5C2]
+                text-[#2D241E] 
                 sm:mt-5 
                 md:mt-6 
                 md:text-sm
               "
             >
-              Fresh flavours and carefully crafted dishes bring people together
+              Fresh flavours and carefully crafted dishes bring people
               <br />
-              in a warm and welcoming atmosphere where every moment feels
+              together in a warm and welcoming atmosphere where every
               <br />
-              special. Enjoy great food, wonderful company and memorable
+              moment feels special.
               <br />
             </p>
           </div>
@@ -424,7 +427,7 @@ export default function MainSlider() {
 
             /* DESKTOP — keep original right-side position */
             md:left-auto
-            md:right-[25px]
+            md:right-[15px]
             md:top-1/2
             md:w-[23vw]
             md:translate-x-0
@@ -437,7 +440,7 @@ export default function MainSlider() {
                 font-semibold
                 leading-[1.05]
                 tracking-[-0.03em]
-                text-[#FFE5C2]
+                text-[#2D241E]
 
                 /* MOBILE */
                 text-[1.2rem]
@@ -448,14 +451,15 @@ export default function MainSlider() {
                 md:text-[clamp(1.2rem,3vw,3.5rem)]
                 md:leading-[1.5]
                 md:tracking-[-0.04em]
+                dark:text-[#FFE5C2] /* Dark theme */
                 "
             >
-              Great cafe in Coomera
+              GREAT CAFE IN COOMERA
               {/* MOBILE ONLY */}
               <span className="md:hidden">
                 <br />
                 <span className="text-[0.65rem] tracking-[0.08em]">
-                  FANTASTIC VIBE &amp; VIEW
+                  FANTASTIC VIBE &amp; VIEW. GREAT LOCATION
                 </span>
               </span>
               {/* DESKTOP ONLY */}
@@ -469,9 +473,9 @@ export default function MainSlider() {
                 <br />
                 SPOT
                 <br />
-                FOR EVERY
+                FOR FAMILY
                 <br />
-                FAMILY EVENT
+                EVENT
               </span>
             </p>
           </div>
@@ -489,7 +493,7 @@ export default function MainSlider() {
             w-screen
             shrink-0
             overflow-hidden
-            bg-[#D90B18]
+            bg-[#f0e9dd]
             px-3
             py-4
             sm:px-6
@@ -907,27 +911,27 @@ export default function MainSlider() {
 
           <div
             className="
-              pointer-events-none
-              absolute
-              left-1/2
-              top-[9%]
-              sm:top-[2%]
-              z-0
-              -translate-x-1/2
-              whitespace-nowrap
-            "
+    pointer-events-none
+    absolute
+    left-1/2
+    top-[9%]
+    sm:top-[2%]
+    z-0
+    -translate-x-1/2
+    whitespace-nowrap
+  "
           >
             <h2
               className="
-                whitespace-nowrap
-                font-serif
-                text-[clamp(3.2rem,12vw,11rem)]
-                font-medium
-                uppercase
-                leading-none
-                tracking-[-0.03em]
-                text-[#FFE5C2]/40
-              "
+      whitespace-nowrap
+      font-serif
+      text-[clamp(2.5rem,8vw,6rem)]
+      font-medium
+      uppercase
+      leading-none
+      tracking-[-0.03em]
+      text-[#FFE5C2]/40
+    "
             >
               Casual Dining
             </h2>
