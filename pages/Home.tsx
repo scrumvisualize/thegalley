@@ -197,6 +197,10 @@ export default function Home() {
           <h1
             className="
             text-white
+            px-6
+            sm:px-4
+            md:px-6
+            lg:px-6
             "
           >
             <span
@@ -295,10 +299,12 @@ export default function Home() {
           sm:right-8
           md:bottom-10
           md:right-10
-          hover:bg-[#C89B3C]
           hover:scale-105
           active:bg-[#C89B3C]
           active:scale-95
+          hover:border-[#D4AF37]
+          hover:text-[#D4AF37]
+          hover:shadow-[0_0_12px_rgba(212,175,55,0.35)]
          "
         >
           Book Now
@@ -561,7 +567,12 @@ export default function Home() {
               shadow-lg
               transition
               hover:bg-[#36453B]
-              dark:shadow-black/40
+              border
+              border-white/30
+              hover:scale-105
+              hover:border-[#D4AF37]
+              hover:text-[#D4AF37]
+              hover:shadow-[0_0_12px_rgba(212,175,55,0.35)]
             "
             >
               BOOK NOW
@@ -580,8 +591,17 @@ export default function Home() {
               shadow-lg
               transition
               hover:bg-[#36453B]
-              dark:shadow-black/40
-            "
+              border
+              border-white/30
+              hover:scale-105
+              hover:border-[#D4AF37]
+              hover:text-[#D4AF37]
+              hover:shadow-[0_0_12px_rgba(212,175,55,0.35)]
+              /* DARK THEME — mobile fix */
+              dark:bg-[#495A4D]
+              dark:border-[#FFE5C2]/40
+              dark:shadow-[0_0_12px_rgba(255,229,194,0.35)]
+                      "
             >
               ORDER ONLINE
             </button>
@@ -937,107 +957,106 @@ export default function Home() {
       {showOffer && (
         <div
           className="
-          fixed
-          inset-0
-          z-50
-          flex
-          items-center
-          justify-center
-          bg-black/60
-          px-4
-          "
+      fixed
+      inset-0
+      z-50
+      flex
+      items-center
+      justify-center
+      bg-black/60
+      px-4
+    "
         >
           <div
             className="
-            relative
-            flex
-            max-w-4xl
-            overflow-hidden
-            rounded-3xl
-            bg-white
-            shadow-2xl
-            dark:bg-[#171717]
-          "
+        relative
+        flex
+        max-w-2xl
+        md:max-w-3xl
+        overflow-hidden
+        rounded-3xl
+        bg-white
+        shadow-2xl
+        dark:bg-[#171717]
+      "
           >
-            {/* Close */}
-
+            {/* Close Button */}
             <button
               onClick={() => setShowOffer(false)}
               className="
-              absolute
-              right-2
-              top-4
-              z-20
-              flex
-              h-8
-              w-8
-              items-center
-              justify-center
-              rounded-full
-              bg-black/60
-              text-white
-              transition
-              hover:bg-[#C89B3C]
-            "
+          absolute
+          right-2
+          top-4
+          z-20
+          flex
+          h-8
+          w-8
+          items-center
+          justify-center
+          rounded-full
+          bg-black/60
+          text-white
+          transition
+          hover:bg-[#C89B3C]
+        "
             >
               ✕
             </button>
 
-            {/* LEFT IMAGE animation */}
-
+            {/* LEFT IMAGE */}
             <div
               className="
-              overflow-hidden
-              block
-              w-full
-              md:w-1/2
-              "
+          overflow-hidden
+          block
+          w-full
+          md:w-1/2
+        "
             >
               <img
                 src="/images/hero.png"
                 className="
-                  h-auto
-                  w-full
-                  object-cover
-                  animate-slideInLeft
-                  py-14
-                  "
+            h-auto
+            w-full
+            object-cover
+            animate-slideInLeft
+            py-8
+            md:py-10
+          "
               />
             </div>
 
-            {/* RIGHT CONTENT - displays first */}
-
+            {/* RIGHT CONTENT */}
             <div
               className="
-              w-full
-              px-1
-              py-5
-              sm:px-8
-              sm:py-8
-              md:w-1/2
-              md:p-10
-              mt-8
-            "
+          w-full
+          px-1
+          py-5
+          sm:px-8
+          sm:py-8
+          md:w-1/2
+          md:p-6
+          mt-8
+        "
             >
               <h2
                 className="
-                text-3xl
-                font-black
-                uppercase
-                text-[#2D241E]
-                dark:text-white
-                "
+            text-3xl
+            font-black
+            uppercase
+            text-[#2D241E]
+            dark:text-white
+          "
               >
                 GET 10% OFF
               </h2>
 
               <p
                 className="
-                mt-5
-                leading-7
-                text-gray-600
-                dark:text-gray-300
-                "
+            mt-5
+            leading-7
+            text-gray-600
+            dark:text-gray-300
+          "
               >
                 Subscribe and receive 10% discount on your next visit to The
                 Galley Cafe.
@@ -1047,36 +1066,36 @@ export default function Home() {
                 type="email"
                 placeholder="Enter your email"
                 className="
-                mt-8
-                w-full
-                rounded-full
-                border
-                border-gray-300
-                bg-white
-                px-6
-                py-4
-                text-gray-900
-                placeholder:text-gray-500
-                outline-none
-                transition
+            mt-8
+            w-full
+            rounded-full
+            border
+            border-gray-300
+            bg-white
+            px-6
+            py-4
+            text-gray-900
+            placeholder:text-gray-500
+            outline-none
+            transition
 
-                dark:border-gray-600
-                dark:bg-[#2A2A2A]
-                dark:text-white
-                dark:placeholder:text-gray-400
-              "
+            dark:border-gray-600
+            dark:bg-[#2A2A2A]
+            dark:text-white
+            dark:placeholder:text-gray-400
+          "
               />
 
               <button
                 className="
-                mt-4
-                rounded-full
-                bg-[#C89B3C]
-                px-10
-                py-4
-                font-bold
-                text-white
-                "
+            mt-4
+            rounded-full
+            bg-[#C89B3C]
+            px-10
+            py-4
+            font-bold
+            text-white
+          "
               >
                 SEND
               </button>
